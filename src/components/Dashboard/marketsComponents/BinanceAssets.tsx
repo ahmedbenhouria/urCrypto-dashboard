@@ -179,12 +179,18 @@ export const BinanceAssets = () => {
   // Query for WebSocket data
   const { data: assets = [] } = useBinanceWebSocket();
 
+  const hasCachedData = () => {
+    return (
+      localStorage.getItem(STORAGE_KEY) ||
+      localStorage.getItem(CRYPTO_NAMES_CACHE_KEY)
+    );
+  };
+
   if (status == "error") {
     return <h1>{JSON.stringify(error)}</h1>;
   }
 
-  // Remove the loading check since we're using cached data
-  if (!cryptoNames && !assets.length) {
+  if (!cryptoNames && !assets.length && !hasCachedData()) {
     return (
       <div className="h-full w-full flex items-center justify-center">
         <Loader2 className="h-8 w-8 text-second-color animate-spin" />
