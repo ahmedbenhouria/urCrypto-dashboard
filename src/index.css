@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-theme="light"] {
+    --background: #ffffff;
+    --text-color: #2C3131;
+    --main-color: #2B3674;
+    --second-color: #4318FF;
+    --third-color: #8b97bb;
+    --fourth-color: #8F9BBA;
+    --fifth-color: #F4F7FE;
+    --sixth-color: #707EAE;
+    --border-color: #E8EAEC;
+    --hover-color: #f3f4f6;
+}
+
+[data-theme="dark"] {
+    --background: #1C1C25;
+    --text-color: #FFFF;
+    --main-color: #7689f3;
+    --second-color: #7689f3;
+    --third-color: #e3e3fe9b;
+    --fourth-color: #cfd0ff5d;
+    --fifth-color: #12131A;
+    --sixth-color: #b2bdf8;
+    --border-color: #e8eaec15;
+    --hover-color: #c7c7c70b;
+}
+
+*{
+    @apply transition-colors duration-300;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f3f3f3;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--second-color);
+    border-radius: 6px;
+}
