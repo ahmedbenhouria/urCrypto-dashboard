@@ -1,4 +1,4 @@
-# Overview
+# 🌐 Overview
 A modern and responsive cryptocurrency dashboard **template** built with React, TypeScript, Vite, and Tailwind CSS.
 
 
